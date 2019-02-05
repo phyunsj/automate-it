@@ -4,11 +4,11 @@ The collection of ideas to improve the productivity.
 
 ## Ansible + Node-RED flow
 
-1. Where to start/Environment Setup
+#### 1. Where to start/Environment Setup
 
 TBD
 
-2. Prerequisites
+#### 2. Prerequisites
 
 Insall `ansible` 
 
@@ -26,10 +26,10 @@ Either install `node-red-dashboard' from Palette or CLI.
 
 > $ cd $HOME/.node-red && npm install node-red-dashboard // Pi
 
-3. In Action
+#### 3. In Action
 
 > $ ansible-playbook -i hosts -k flow1.yml  // Mac
 
 <p align="center">
-<img src="https://github.com/phyunsj/automate-it/blob/master/ansible-node-red/ansible-node-red-flow-change-text.gif" width="650px"/>
+<img src="https://github.com/phyunsj/automate-it/blob/master/ansible-node-red/ansible-node-red-flow-change-text.gif" width="700px"/>
 </p>
