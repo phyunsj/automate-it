@@ -10,7 +10,7 @@ TBD
 
 #### 2. Prerequisites
 
-[Mac] Insall `ansible` 
+[Mac] Install `ansible` 
 
 > $ brew install ansible 
 
@@ -18,11 +18,11 @@ TBD
 
 > $ brew install http://git.io/sshpass.rb 
 
-[Pi] `npm` is not installed. Manage Palette won't be available(visible). Restart node-red after `npm` installation.
+[Pi] `npm` is not installed yet. `Manage Palette` won't be available(visible). Restart node-red after `npm` installation.
 
 > $ sudo apt update && sudo apt install npm 
 
-[Pi] Either install `node-red-dashboard' from Palette or CLI.
+[Pi] Install `node-red-dashboard' from Palette or CLI. (It can be installed from ansible as well)
 
 > $ cd $HOME/.node-red && npm install node-red-dashboard 
 
