@@ -14,9 +14,9 @@ The collection of ideas(or short examples) of performing personal experiments on
 
 #### About Ansible
 
-Ansible is an IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates. ..._from [Ansible Document](https://docs.ansible.com/ansible/latest/index.html)_
+Ansible is an IT automation tool. It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates. ... _from [Ansible Document](https://docs.ansible.com/ansible/latest/index.html)_
 
-Ansible manages machines in an **agent-less manner**. No installation(e.g., agent) on targret machines. 
+Ansible manages machines(or nodes) in an **agent-less manner**. Ansible connects via SSH to the machines it wants to manage and **pushes** what it’s supposed to do. 
 
 ### Prerequisites
 
@@ -67,7 +67,7 @@ https://www.raspberrypi.org/documentation/remote-access/ssh/
  flowFile: 'flows.json', // uncomment this line
 ```
 
-###  In Action [Mac]
+###  In Action 
 
 In this example,two playbooks(flow1.yml & flow2.yml) were executed one after another and new flow.json was copied over to Pi each time.
 
