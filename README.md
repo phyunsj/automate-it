@@ -8,7 +8,7 @@ The collection of ideas & the personal experiments (short examples) on automatio
 
 ## 1. Node-RED flow deployment with [Ansible](https://www.ansible.com/)
 
-Remote flow re-deployment had been discussed (i.g., [How can I remotely deploy a flow file in Node-RED?](https://stackoverflow.com/questions/42143597/how-can-i-remotely-deploy-a-flow-file-in-node-red) ) I explored different options meeting the following criteria:
+Flow re-deployment had been discussed (i.g., [How can I remotely deploy a flow file in Node-RED?](https://stackoverflow.com/questions/42143597/how-can-i-remotely-deploy-a-flow-file-in-node-red) ) I explored different options meeting the following criteria:
 
 1. **simple** 
 2. supports scripts
