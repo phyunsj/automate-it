@@ -15,8 +15,9 @@ Flow re-deployment had been discussed (i.g., [How can I remotely deploy a flow f
 3. control node-red stop/start
 4. flow.json re-deployment
 5. module management (install/uninstall/update) 
+6. control multiple nodes
 
-**IMO** After spending a few days of watching clips & reading examples, **Ansible** easily meets this requirements.
+**IMO** After spending a few days of watching clips & reading examples, **Ansible** easily meets those requirements.
 
 <p align="center">
 <img src="https://github.com/phyunsj/automate-it/blob/master/ansible-node-red/ansible.png" width="100px"/>
