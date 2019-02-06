@@ -1,12 +1,22 @@
 # Automate It
 
-The collection of ideas(or short examples) of performing personal experiments on automation tools.   
+The collection of ideas & the personal experiments (short examples) on automation tools.   
 
 1. [Node-RED flow deployment with Ansible](https://github.com/phyunsj/automate-it/blob/master/README.md)
 2. TBD
 3. TBD
 
 ## 1. Node-RED flow deployment with [Ansible](https://www.ansible.com/)
+
+Remote flow re-deployment had been discussed (i.g., [How can I remotely deploy a flow file in Node-RED?](https://stackoverflow.com/questions/42143597/how-can-i-remotely-deploy-a-flow-file-in-node-red) ) I explored different options meeting the following criteria:
+
+1. **simple** 
+2. supports scripts
+3. control node-red stop/start
+4. flow.json re-deployment
+5. module management (install/uninstall/update) 
+
+**IMO** After spending a few days of watching clips & reading examples, **Ansible** easily meets this requirements.
 
 <p align="center">
 <img src="https://github.com/phyunsj/automate-it/blob/master/ansible-node-red/ansible.png" width="100px"/>
@@ -18,17 +28,17 @@ Ansible is an IT automation tool. It can configure systems, deploy software, and
 
 Ansible manages machines(or nodes) in an **agent-less manner**. Ansible connects via SSH to the machines it wants to manage and **pushes** what it’s supposed to do. 
 
-### Prerequisites
+### Prerequisites - Ansible Master (Mac)
 
-**Mac:** Install `ansible` 
+Install `ansible` 
 
 > $ brew install ansible 
 
-**Mac:** Install `sshpass`
+Install `sshpass`
 
 > $ brew install http://git.io/sshpass.rb 
 
-**Mac:** Create `hosts`(inventory) in /etc/ansible or designated location (`-i` option).
+Create `hosts`(inventory) in /etc/ansible or designated location (`-i` option).
 
 ```
 [dev]
@@ -38,16 +48,20 @@ Ansible manages machines(or nodes) in an **agent-less manner**. Ansible connects
 192.168.201.75 ansible_user=pi
 ```
 
-**Pi:** Install OS Images
+### Prerequisites - Pi
+
+**NOTE** npm/node-red installation, settings.js copy operation can be managed by ansible-playbook as well. 
+
+Install OS Images
 
 https://www.raspberrypi.org/downloads/raspbian/ download **Raspbian Stretch with desktop and recommended software**(`2018-11-13-raspbian-stretch-full.zip`) for this example.
 https://www.raspberrypi.org/documentation/installation/installing-images/README.md
 
-**Pi:** Enable `ssh`
+Enable `ssh`
 
 https://www.raspberrypi.org/documentation/remote-access/ssh/
 
-**Pi:** Install `npm` (Palette Manager won't be visible from node-red). Restart node-red after `npm` installation.
+Install `npm` (Palette Manager won't be visible from node-red). Restart node-red after `npm` installation.
 
 ```
  $ sudo systemctl stop nodered.service (or node-red-stop)
@@ -56,14 +70,14 @@ https://www.raspberrypi.org/documentation/remote-access/ssh/
  $ sudo systemctl start nodered.service (or node-red-start)
 ```
 
-**Pi:** Install `node-red-dashboard` from Palette Manager or CLI.
+Install `node-red-dashboard` from Palette Manager or CLI.
 
 ```
  $ cd $HOME/.node-red
  $ npm install node-red-dashboard 
 ```
 
-**Pi:** Edit `settings.js`
+Edit `settings.js`
 
 ```
  // The file containing the flows. If not set, it defaults to flows_<hostname>.json
@@ -116,7 +130,7 @@ PLAY RECAP *********************************************************************
        become: yes  # sudo deprecated
        shell:
              systemctl stop nodered.service
-     - name: install bonjour
+     - name: install bonjour # just show as an example how it can be managed.
        become: yes 
        npm:
            name: bonjour
