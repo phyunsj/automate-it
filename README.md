@@ -30,8 +30,7 @@ Ansible manages machines in an **agent-less manner**. No installation is require
 555.666.777.888 ansible_user=pi
 ```
 
-
-[Pi] `npm` is not installed yet. `Manage Palette` won't be available(visible). Restart node-red after `npm` installation.
+[Pi] Install `npm` (`Manage Palette` won't be visible from node-red). Restart node-red after `npm` installation.
 
 > $ sudo apt update && sudo apt install npm 
 
