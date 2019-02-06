@@ -54,7 +54,7 @@ Create `hosts`(inventory) in /etc/ansible or designated location (`-i` option).
 
 Install OS Images
 
-https://www.raspberrypi.org/downloads/raspbian/ download **Raspbian Stretch with desktop and recommended software**(`2018-11-13-raspbian-stretch-full.zip`) for this example.
+https://www.raspberrypi.org/downloads/raspbian/ Pick **Raspbian Stretch with desktop and recommended software**(`2018-11-13-raspbian-stretch-full.zip` for this example).
 https://www.raspberrypi.org/documentation/installation/installing-images/README.md
 
 Enable `ssh`
