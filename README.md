@@ -32,10 +32,10 @@ Ansible manages machines(or nodes) in an **agent-less manner**. Ansible connects
 
 ```
 [dev]
-111.222.333.444 ansible_user=pi
+192.168.201.75 ansible_user=pi
 
 [prod]
-555.666.777.888 ansible_user=pi
+192.168.201.75 ansible_user=pi
 ```
 
 **Pi:** Install OS Images
@@ -58,7 +58,10 @@ https://www.raspberrypi.org/documentation/remote-access/ssh/
 
 **Pi:** Install `node-red-dashboard` from Palette Manager or CLI.
 
-> $ cd $HOME/.node-red && npm install node-red-dashboard 
+```
+ $ cd $HOME/.node-red
+ $ npm install node-red-dashboard 
+```
 
 **Pi:** Edit `settings.js`
 
@@ -72,10 +75,60 @@ https://www.raspberrypi.org/documentation/remote-access/ssh/
 In this example,two playbooks(flow1.yml & flow2.yml) were executed one after another and new flow.json was copied over to Pi each time.
 
 ```
+$ ansible --version
+ansible 2.7.6
 $ ansible-playbook -i hosts -k flow1.yml  
+SSH password:
+
+PLAY [dev] ***************************************************************************************
+
+TASK [Gathering Facts] ***************************************************************************
+ok: [192.168.201.75]
+
+TASK [stop node-red] *****************************************************************************
+changed: [192.168.201.75]
+
+TASK [install bonjour] ***************************************************************************
+ok: [192.168.201.75]
+
+TASK [copy new flows.json] ***********************************************************************
+changed: [192.168.201.75]
+
+TASK [start node-red] ****************************************************************************
+changed: [192.168.201.75]
+
+PLAY RECAP ***************************************************************************************
+192.168.201.75             : ok=5    changed=3    unreachable=0    failed=0
 
 ```
 
 <p align="center">
 <img src="https://github.com/phyunsj/automate-it/blob/master/ansible-node-red/ansible-node-red-flow-change-text.gif" width="700px"/>
 </p>
+
+#### flow1.yml 
+
+```
+---
+- hosts: dev
+  tasks:
+     - name: stop node-red
+       become: yes  # sudo deprecated
+       shell:
+             systemctl stop nodered.service
+     - name: install bonjour
+       become: yes 
+       npm:
+           name: bonjour
+           path: /usr/lib/node_modules/node-red
+           state: latest
+     #     registry: https://registry.npmjs.org
+     - name: copy new flows.json
+       copy:
+          src:  flows1.json
+          dest: /home/pi/.node-red/flows.json
+     - name: start node-red
+       become: yes
+       shell:
+             systemctl start nodered.service
+  ```
