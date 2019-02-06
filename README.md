@@ -86,7 +86,7 @@ Edit `settings.js`
 
 ###  In Action 
 
-In this example,two playbooks(flow1.yml & flow2.yml) were executed one after another and new flow.json was copied over to Pi each time.
+In this example,two playbooks(flow1.yml & flow2.yml) were executed one after another and new flows.json was copied over to Pi each time.
 
 ```
 $ ansible --version
