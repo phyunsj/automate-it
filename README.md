@@ -31,14 +31,12 @@ Ansible manages machines(or nodes) in an **agent-less manner**. Ansible connects
 
 ### Prerequisites - Ansible Master (Mac)
 
-Install `ansible` 
+Install `ansible` & `sshpass`
 
-> $ brew install ansible 
-
-Install `sshpass`
-
-> $ brew install http://git.io/sshpass.rb 
-
+```
+ $ brew install ansible 
+ $ brew install http://git.io/sshpass.rb 
+```
 Create `hosts`(inventory) in /etc/ansible or designated location (`-i` option).
 
 ```
@@ -53,7 +51,7 @@ Create `hosts`(inventory) in /etc/ansible or designated location (`-i` option).
 
 **NOTE** npm/node-red installation, settings.js copy operation can be managed by ansible-playbook as well. 
 
-Install OS Images
+Download & Install OS Images
 
 https://www.raspberrypi.org/downloads/raspbian/ Pick **Raspbian Stretch with desktop and recommended software**(`2018-11-13-raspbian-stretch-full.zip` for this example).
 
