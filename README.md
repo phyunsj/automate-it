@@ -130,7 +130,7 @@ PLAY RECAP *********************************************************************
        become: yes  # sudo deprecated
        shell:
              systemctl stop nodered.service
-     - name: install bonjour # just show as an example how it can be managed.
+     - name: install bonjour # just as an example.
        become: yes 
        npm:
            name: bonjour
