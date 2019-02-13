@@ -26,6 +26,9 @@ optional arguments:
   -u U        ssh username
   -p P        ssh password if asked
   -f F        new flows.json
+```
+
+```
 phyunsj$ python  flow_deploy.py -t dev -u pi -f flows2.json -p <SSH PASSWORD>
 pi@192.168.201.75's password:
 Linux raspberrypi 4.14.79-v7+ #1159 SMP Sun Nov 4 17:50:20 GMT 2018 armv7l
