@@ -16,8 +16,8 @@ phyunsj$ pip install pexpect
 ```
 phyunsj$ python --version
 Python 2.7.15
-phyunsj$ python flow_deploy.py -h
-usage: flow_deploy.py [-h] [-t T] [-i I] [-u U] [-p P] [-f F]
+phyunsj$ python node_red_flow_deploy.py -h
+usage: node_red_flow_deploy.py [-h] [-t T] [-i I] [-u U] [-p P] [-f F]
 
 optional arguments:
   -h, --help  show this help message and exit
@@ -29,7 +29,7 @@ optional arguments:
 ```
 
 ```
-phyunsj$ python  flow_deploy.py -t dev -u pi -f flows2.json -p <SSH PASSWORD>
+phyunsj$ python  node_red_flow_deploy.py -t dev -u pi -f flows2.json -p <SSH PASSWORD>
 pi@192.168.201.75's password:
 Linux raspberrypi 4.14.79-v7+ #1159 SMP Sun Nov 4 17:50:20 GMT 2018 armv7l
 
