@@ -1,0 +1,8 @@
+[local]
+127.0.0.1 ansible_user=pi
+
+[dev]
+192.168.201.75 ansible_user=pi
+
+[prod]
+192.168.201.75 ansible_user=pi 
