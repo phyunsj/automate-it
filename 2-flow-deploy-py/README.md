@@ -11,7 +11,7 @@ Revisted [Node-RED flow deployment with Ansible](https://github.com/phyunsj/auto
 phyunsj$ pip install pexpect
 ```
 
-## Console Output - Mac
+## Console Output
 
 ```
 phyunsj$ python --version
@@ -49,3 +49,11 @@ Ran 3 tests in 16.688s
 OK
 phyunsj$
 ```
+
+#### See Also
+
+- [pexpect](https://pexpect.readthedocs.io/en/stable/examples.html)
+- [argparse](https://docs.python.org/2/howto/argparse.html)
+- [ConfigParser](https://docs.python.org/2/library/configparser.html)
+- [unittest](https://docs.python.org/2/library/unittest.html)
+
