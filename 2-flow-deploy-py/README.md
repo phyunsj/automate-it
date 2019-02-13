@@ -53,7 +53,7 @@ OK
 phyunsj$
 ```
 
-#### See Also (the python modules used by node_red_flow_deploy.py)
+#### See Also
 
 - [pexpect](https://pexpect.readthedocs.io/en/stable/examples.html)
 - [argparse](https://docs.python.org/2/howto/argparse.html)
