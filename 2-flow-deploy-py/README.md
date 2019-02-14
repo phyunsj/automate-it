@@ -5,12 +5,33 @@ See [node_red_flow_deploy.py](https://github.com/phyunsj/automate-it/blob/master
 
 ## What is [Pexpect](https://github.com/pexpect/pexpect)?
 
-**Pexpect** is a pure Python module for spawning child applications; controlling them; and responding to expected patterns in their output. Pexpect works like Don Libes’ Expect. Pexpect allows your script to spawn a child application and control it as if a human were typing commands. **Pexpect** can be used for automating interactive applications such as ssh, ftp, passwd, telnet, etc. ..._from [Pexpect Doc](https://pexpect.readthedocs.io/en/stable/)_
+**Pexpect** is a pure Python module for spawning child applications; controlling them; and responding to expected patterns in their output. Pexpect works like Don Libes’ Expect. Pexpect allows your script to spawn a child application and control it as if a human were typing commands. 
+**Pexpect** can be used for automating interactive applications such as ssh, ftp, passwd, telnet, etc. ..._from [Pexpect Doc](https://pexpect.readthedocs.io/en/stable/)_
 
 #### Installation
 
 ```
 phyunsj$ pip install pexpect
+```
+
+## ssh 
+
+
+```
+    @classmethod
+    def setUpClass(self):
+        self.child = pexpect.spawn('ssh '+self.targetUser+'@'+self.targetHost)
+        self.child.logfile_read = sys.stdout
+        self.child.expect('password: ')
+        self.child.sendline(self.targetPass)
+        self.child.expect(self.targetPrompt)
+        
+    ...
+    
+    def test_3_node_red_start(self):
+        self.child.sendline('sudo systemctl start nodered.service')
+        self.child.expect(self.targetPrompt)
+        time.sleep(5)
 ```
 
 ## Console Output
