@@ -1,5 +1,7 @@
 
-Revisted [Node-RED flow deployment with Ansible](https://github.com/phyunsj/automate-it/blob/master/README.md). The small scale of nodes can be managed by python alone. See [node_red_flow_deploy.py](https://github.com/phyunsj/automate-it/blob/master/2-flow-deploy-py/node_red_flow_deploy.py). 
+Revisted [Node-RED flow deployment with Ansible](https://github.com/phyunsj/automate-it/blob/master/README.md). The small scale of nodes can be managed by python alone. 
+
+See [node_red_flow_deploy.py](https://github.com/phyunsj/automate-it/blob/master/2-flow-deploy-py/node_red_flow_deploy.py). 
 
 ## What is [Pexpect](https://github.com/pexpect/pexpect)?
 
