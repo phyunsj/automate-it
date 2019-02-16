@@ -3,7 +3,7 @@
 The collection of ideas & the personal experiments (short examples) on automation tools.   
 
 1. [Node-RED flow deployment with Ansible](https://github.com/phyunsj/automate-it/blob/master/README.md)
-2. [Node-RED flow deployment with python](https://github.com/phyunsj/automate-it/blob/master/2-flow-deploy-py/README.md) : Revisited Ansible Solution (1)
+2. [Node-RED flow deployment with python](https://github.com/phyunsj/automate-it/blob/master/2-flow-deploy-py) : Revisited Ansible Solution (1)
 3. TBD
 4. TBD
 
