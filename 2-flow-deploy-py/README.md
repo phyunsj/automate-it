@@ -53,6 +53,8 @@ optional arguments:
   -f F        new flows.json
 ```
 
+log what the child sends back 
+
 > self.child.logfile_read = sys.stdout
 
 ```
