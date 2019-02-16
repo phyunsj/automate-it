@@ -53,6 +53,8 @@ optional arguments:
   -f F        new flows.json
 ```
 
+> self.child.logfile_read = sys.stdout
+
 ```
 phyunsj$ python  node_red_flow_deploy.py -t dev -u pi -f flows2.json -p <SSH PASSWORD>
 pi@192.168.201.75's password:
