@@ -1,8 +1,6 @@
 
 Revisted [Node-RED flow deployment with Ansible](https://github.com/phyunsj/automate-it/blob/master/README.md). The small scale of nodes can be managed by python alone. 
 
-See [node_red_flow_deploy.py](https://github.com/phyunsj/automate-it/blob/master/2-flow-deploy-py/node_red_flow_deploy.py). 
-
 ## What is [Pexpect](https://github.com/pexpect/pexpect)?
 
 **Pexpect** is a pure Python module for spawning child applications; controlling them; and responding to expected patterns in their output. Pexpect works like Don Libes’ Expect. Pexpect allows your script to spawn a child application and control it as if a human were typing commands. **Pexpect** can be used for automating interactive applications such as ssh, ftp, passwd, telnet, etc. ..._from [Pexpect Doc](https://pexpect.readthedocs.io/en/stable/)_
@@ -35,6 +33,8 @@ Use `unittest` framework to control the flow of tasks. Flow-specific testcase(s)
         self.child.sendline('sudo systemctl start nodered.service')
         ...
 ```
+
+See [node_red_flow_deploy.py](https://github.com/phyunsj/automate-it/blob/master/2-flow-deploy-py/node_red_flow_deploy.py). 
 
 #### Console Output
 
@@ -110,7 +110,7 @@ phyunsj$
 #### See Also
 
 - [pexpect](https://pexpect.readthedocs.io/en/stable/examples.html)
-- [Paramiko](https://github.com/paramiko/paramiko)
+- [paramiko](https://github.com/paramiko/paramiko)
 - [argparse](https://docs.python.org/2/howto/argparse.html)
 - [ConfigParser](https://docs.python.org/2/library/configparser.html)
 - [unittest](https://docs.python.org/2/library/unittest.html)
