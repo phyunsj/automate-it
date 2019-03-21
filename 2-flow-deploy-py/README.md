@@ -13,7 +13,7 @@ See [node_red_flow_deploy.py](https://github.com/phyunsj/automate-it/blob/master
 phyunsj$ pip install pexpect
 ```
 
-## Flow (Re)deployment 
+#### Flow (Re)deployment 
 
 Use `unittest` framework to control the flow of tasks. Flow-specific testcase(s) can be added if desired.
 
@@ -36,7 +36,7 @@ Use `unittest` framework to control the flow of tasks. Flow-specific testcase(s)
         ...
 ```
 
-## Console Output
+#### Console Output
 
 ```
 phyunsj$ python --version
@@ -82,9 +82,35 @@ OK
 phyunsj$
 ```
 
+## [Pexpect](https://github.com/pexpect/pexpect) Alternative : [Paramiko](https://github.com/paramiko/paramiko)
+
+> pip install paramiko
+
+See [node_red_flow_deploy_w_paramiko.py](https://github.com/phyunsj/automate-it/blob/master/2-flow-deploy-py/node_red_flow_deploy_w_paramiko.py).
+
+#### Console Output
+
+```
+phyunsj$ python ./flow_deploy_wiht_paramiko.py -t <IP ADDRESS> -u pi -p <SSH PASSWORD> -f flows-1234.json
+/usr/local/lib/python2.7/site-packages/paramiko/ecdsakey.py:164: CryptographyDeprecationWarning: Support for unsafe construction of public numbers from encoded data will be removed in a future version. Please use EllipticCurvePublicKey.from_encoded_point
+ ...
+/usr/local/lib/python2.7/site-packages/paramiko/client.py:822: UserWarning: Unknown ssh-ed25519 host key for 192.168.201.74: d6a9e1efd449831010b1c15ad6a9c07d
+  key.get_name(), hostname, hexlify(key.get_fingerprint())
+test_1_node_red_stop (__main__.flowDeployTest) ... ok
+test_2_flow_re_deploy (__main__.flowDeployTest) ... ok
+test_3_node_red_start (__main__.flowDeployTest) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 17.269s
+
+OK
+phyunsj$
+```
+
 #### See Also
 
 - [pexpect](https://pexpect.readthedocs.io/en/stable/examples.html)
+- [Paramiko](https://github.com/paramiko/paramiko)
 - [argparse](https://docs.python.org/2/howto/argparse.html)
 - [ConfigParser](https://docs.python.org/2/library/configparser.html)
 - [unittest](https://docs.python.org/2/library/unittest.html)
